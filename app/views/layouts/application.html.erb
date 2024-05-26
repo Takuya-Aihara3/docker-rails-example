@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Docker + Rails</title>
+    <title>Rspec Tutorial</title>
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -46,9 +46,20 @@
       </div>
     </div>
 
-    <main class="max-w-screen-lg mx-auto mb-auto">
-      <%= yield %>
-    </main>
+<% if flash[:notice] %>
+  <div class="p-4 mb-4 text-md text-blue-700 text-center font-bold">
+    <%= notice %>
+  </div>
+<% end %>
+<% if flash[:alert] %>
+  <div class="p-4 mb-4 text-md text-red-700 text-center font-bold">
+    <%= alert %>
+  </div>
+<% end %>
+
+<main class="container mx-auto sm:w-10/12 lg:w-9/12 mb-8 z-0">
+  <%= yield %>
+</main>
 
     <footer class="text-center mt-6 pb-6 h-10">
       <p class="text-gray-500">
